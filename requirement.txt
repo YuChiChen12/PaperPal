@@ -1,0 +1,5 @@
+environment location: C:\Users\danny\anaconda3\envs\Paperpal
+    To activate this environment, use
+        $ conda activate Paperpal
+    To deactivate an active environment, use
+        $ conda deactivate
