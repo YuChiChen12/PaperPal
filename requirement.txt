@@ -1,24 +1,31 @@
 Library：
-python==3.12.4
+python==3.9.19
+git==2.45.2
 langchain==0.2.6
-langchain-core==0.2.10
-langchain-text-splitters==0.2.2
+langchain-community==0.2.6
 pypdf2==2.11.1
 python-dotenv==1.0.1
-faiss-cpu==1.8.0
+faiss-cpu==1.7.4
 streamlit==1.36.0
-streamlit-extras (No available for conda env for me)
+streamlit-extras==0.4.0
 
 Virtual Environment：
     environment location: C:\Users\danny\anaconda3\envs\Paperpal
+    To look up all the conda environment
+        $ conda info --env
+        $ conda env list
     To create this environment, use
-        $ conda create --name myenv python=3.8
+        $ conda create --name 環境名稱
     To activate this environment, use
         $ conda activate paperpal
     To deactivate an active environment, use
         $ conda deactivate
     To install libraries, use
         $ conda install -c conda-forge 套件
+    To delete the specific library
+        $ conda remove -n 套件 --all
+    To delete the specific conda environment
+        $ conda env remove --name myenv
 
 Git：
     $ cd "C:\Users\danny\anaconda3\envs\Paperpal"
@@ -28,5 +35,5 @@ Git：
     $ git push
 
 Run streamlit：
-    $ cd C:\Users\danny\Desktop\PaperPal\src
-    $ python -m streamlit run app.py
+    $ streamlit run src/app.py
+    $ python -m streamlit run src/app.py
