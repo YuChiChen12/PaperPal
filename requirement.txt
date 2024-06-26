@@ -31,7 +31,7 @@ Git：
     $ cd "C:\Users\danny\anaconda3\envs\Paperpal"
     $ git pull
     $ git add .
-    $ git commit -m "sth"
+    $ git commit -m "版本"
     $ git push
 
 Run streamlit：
