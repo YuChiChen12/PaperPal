@@ -1,4 +1,6 @@
 environment location: C:\Users\danny\anaconda3\envs\Paperpal
+    To create this environment, use
+        $ conda create --name myenv python=3.8
     To activate this environment, use
         $ conda activate paperpal
     To deactivate an active environment, use
