@@ -1,15 +1,17 @@
+Library：
 langchain==0.2.6
 langchain-core==0.2.10
 langchain-text-splitters==0.2.2
+pypdf2==2.11.1
+python-dotenv==1.0.1
 
-
-environment location: C:\Users\danny\anaconda3\envs\Paperpal
+Virtual Environment：
+    environment location: C:\Users\danny\anaconda3\envs\Paperpal
     To create this environment, use
         $ conda create --name myenv python=3.8
     To activate this environment, use
         $ conda activate paperpal
     To deactivate an active environment, use
         $ conda deactivate
-
-conda 安裝：
-conda install -c conda-forge 套件名稱
+    To install libraries, use
+        $ conda install -c conda-forge 套件
