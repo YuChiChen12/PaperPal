@@ -1,4 +1,5 @@
 Library：
+python==3.12.4
 langchain==0.2.6
 langchain-core==0.2.10
 langchain-text-splitters==0.2.2
@@ -21,4 +22,4 @@ Virtual Environment：
 
 Run streamlit：
     $ cd C:\Users\danny\Desktop\PaperPal\src
-    $ streamlit run app.py
+    $ python -m streamlit run app.py
