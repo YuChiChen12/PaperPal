@@ -1,3 +1,8 @@
+langchain==0.2.6
+langchain-core==0.2.10
+langchain-text-splitters==0.2.2
+
+
 environment location: C:\Users\danny\anaconda3\envs\Paperpal
     To create this environment, use
         $ conda create --name myenv python=3.8
