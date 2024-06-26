@@ -4,10 +4,9 @@ langchain-core==0.2.10
 langchain-text-splitters==0.2.2
 pypdf2==2.11.1
 python-dotenv==1.0.1
-streamlit==1.36.0
 faiss-cpu==1.8.0
-
-
+streamlit==1.36.0
+streamlit-extras
 
 Virtual Environment：
     environment location: C:\Users\danny\anaconda3\envs\Paperpal
@@ -19,3 +18,7 @@ Virtual Environment：
         $ conda deactivate
     To install libraries, use
         $ conda install -c conda-forge 套件
+
+Run streamlit：
+    $ cd C:\Users\danny\Desktop\PaperPal\src
+    $ streamlit run app.py
