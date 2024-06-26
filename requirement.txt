@@ -3,3 +3,6 @@ environment location: C:\Users\danny\anaconda3\envs\Paperpal
         $ conda activate paperpal
     To deactivate an active environment, use
         $ conda deactivate
+
+conda 安裝：
+conda install -c conda-forge 套件名稱
