@@ -7,7 +7,7 @@ pypdf2==2.11.1
 python-dotenv==1.0.1
 faiss-cpu==1.8.0
 streamlit==1.36.0
-streamlit-extras
+streamlit-extras (No available for conda env for me)
 
 Virtual Environment：
     environment location: C:\Users\danny\anaconda3\envs\Paperpal
@@ -19,6 +19,13 @@ Virtual Environment：
         $ conda deactivate
     To install libraries, use
         $ conda install -c conda-forge 套件
+
+Git：
+    $ cd "C:\Users\danny\anaconda3\envs\Paperpal"
+    $ git pull
+    $ git add .
+    $ git commit -m "sth"
+    $ git push
 
 Run streamlit：
     $ cd C:\Users\danny\Desktop\PaperPal\src
