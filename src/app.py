@@ -13,7 +13,7 @@ import os
  
 # Sidebar contents
 with st.sidebar:
-    st.title('🤗💬 LLM Chat App')
+    st.title('🤗💬 PaperPal from YuChiChen')
     st.markdown('''
     ## About
     This app is an LLM-powered chatbot built using:
@@ -29,42 +29,41 @@ load_dotenv()
 def main():
     st.header("Chat with PDF 💬")
  
- 
-    # upload a PDF file
+    # Uploading a file
     pdf = st.file_uploader("Upload your PDF", type='pdf')
- 
-    # st.write(pdf)
     if pdf is not None:
         pdf_reader = PdfReader(pdf)
-        
+
         text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()
- 
+        # st.write(text)   (印出 pdf 內容)
+
+        # Chunking
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=1000,
             chunk_overlap=200,
             length_function=len
             )
         chunks = text_splitter.split_text(text=text)
+        # st.write(chunks)   (印出分塊後的內容)
  
-        # # embeddings
+        # Embeddings
         store_name = pdf.name[:-4]
         st.write(f'{store_name}')
         # st.write(chunks)
  
+        # 在 Embedding 前先利用文件名稱尋找之前是否有讀取過相同的文件，節省 API 資源
         if os.path.exists(f"{store_name}.pkl"):
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
             # st.write('Embeddings Loaded from the Disk')s
+        # 若曾經沒有 Embedding 過才會 Embedding
         else:
             embeddings = OpenAIEmbeddings()
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(VectorStore, f)
- 
-        # embeddings = OpenAIEmbeddings()
-        # VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
  
         # Accept user questions/query
         query = st.text_input("Ask questions about your PDF file:")
