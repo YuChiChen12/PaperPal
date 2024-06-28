@@ -2,7 +2,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import pickle
 from PyPDF2 import PdfReader
-# from streamlit_extras.add_vertical_space import add_vertical_space
+from streamlit_extras.add_vertical_space import add_vertical_space
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -22,6 +22,7 @@ with st.sidebar:
     - [OpenAI](https://platform.openai.com/docs/models) LLM model
  
     ''')
+    add_vertical_space(5)
     st.write('Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)')
  
 load_dotenv()
@@ -48,17 +49,15 @@ def main():
         chunks = text_splitter.split_text(text=text)
         # st.write(chunks)   (印出分塊後的內容)
  
-        # Embeddings
+        # Embeddings：在 Embedding 前先利用文件名稱尋找之前是否有讀取過相同的文件，節省 API 資源
         store_name = pdf.name[:-4]
         st.write(f'{store_name}')
-        # st.write(chunks)
- 
-        # 在 Embedding 前先利用文件名稱尋找之前是否有讀取過相同的文件，節省 API 資源
+        # 用二進制模式讀取曾經儲存的 pkl 檔
         if os.path.exists(f"{store_name}.pkl"):
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
             # st.write('Embeddings Loaded from the Disk')s
-        # 若曾經沒有 Embedding 過才會 Embedding
+        # 若找不到儲存資料才會 Embedding
         else:
             embeddings = OpenAIEmbeddings()
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
