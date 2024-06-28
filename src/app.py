@@ -25,6 +25,7 @@ with st.sidebar:
     add_vertical_space(5)
     st.write('Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)')
  
+#  利用 dotenv 設定環境變數
 load_dotenv()
  
 def main():
@@ -34,7 +35,6 @@ def main():
     pdf = st.file_uploader("Upload your PDF", type='pdf')
     if pdf is not None:
         pdf_reader = PdfReader(pdf)
-
         text = ""
         for page in pdf_reader.pages:
             text += page.extract_text()
@@ -56,8 +56,8 @@ def main():
         if os.path.exists(f"{store_name}.pkl"):
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
-            # st.write('Embeddings Loaded from the Disk')s
-        # 若找不到儲存資料才會 Embedding
+            # st.write('Embeddings Loaded from the Disk')   (顯示他是從之前的資料讀取)
+        # 若找不到儲存資料才會 Embedding，並且將結果儲存為 pkl 檔
         else:
             embeddings = OpenAIEmbeddings()
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
@@ -65,9 +65,7 @@ def main():
                 pickle.dump(VectorStore, f)
  
         # Accept user questions/query
-        query = st.text_input("Ask questions about your PDF file:")
-        # st.write(query)
- 
+        query = st.text_input("Ask questions about your PDF file：")
         if query:
             docs = VectorStore.similarity_search(query=query, k=3)
  
