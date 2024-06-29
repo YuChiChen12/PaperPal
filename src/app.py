@@ -24,10 +24,10 @@ with st.sidebar:
     ''')
     add_vertical_space(5)
     st.write('Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)')
- 
+
 #  利用 dotenv 設定環境變數
 load_dotenv()
- 
+
 def main():
     st.header("Chat with PDF 💬")
  
@@ -67,10 +67,11 @@ def main():
         # Accept user questions/query
         query = st.text_input("Ask questions about your PDF file：")
         if query:
+            # 如果選取的相關內容太多，會超出 LLM 的 context window
             docs = VectorStore.similarity_search(query=query, k=3)
- 
             llm = OpenAI()
             chain = load_qa_chain(llm=llm, chain_type="stuff")
+            # 在 terminal 印出使用 LLM 的費用
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=docs, question=query)
                 print(cb)
