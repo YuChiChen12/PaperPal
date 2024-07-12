@@ -15,7 +15,6 @@ PaperPal is a side project by YuChiChen, designed to handle unstructured data (P
 > Note: There might be some issues with the environment setup, which could take some time to resolve.
 
 ## Caution
-- The code in the "src" folder is all from "paperpal.ipynb", so just run "paperpal.ipynb" directly.
 - The API key has been deleted, please replace it with your own API key.
 - The input only accepts PDF files; other types of files are not supported.
 - If you have any questions or suggestions, please feel free to contact me!
