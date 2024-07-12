@@ -20,11 +20,11 @@ PaperPal is a side project by YuChiChen, designed to handle unstructured data (P
 - If you have any questions or suggestions, please feel free to contact me!
 
 ## Resource
+- [利用 LangChain 實作多模態模型的 RAG：除了讀文章也能看圖答題](https://edge.aif.tw/application-langchain-rag/)
+  - [Github - MultiModal-RAG](https://github.com/Claire-Lin/MultiModal-RAG/blob/main/MultiModal_RAG_Swin.ipynb)
 - [Extracting Text from PDF Files with Python: A Comprehensive Guide](https://towardsdatascience.com/extracting-text-from-pdf-files-with-python-a-comprehensive-guide-9fc4003d517)
 - [Langchain: PDF Chat App (GUI) | ChatGPT for Your PDF FILES | Step-by-Step Tutorial](https://www.youtube.com/watch?v=RIWbalZ7sTo)
   - [Link to the code](https://pastebin.com/mcHG4cY4)
-- [利用 LangChain 實作多模態模型的 RAG：除了讀文章也能看圖答題](https://edge.aif.tw/application-langchain-rag/)
-  - [Github - MultiModal-RAG](https://github.com/Claire-Lin/MultiModal-RAG/blob/main/MultiModal_RAG_Swin.ipynb)
 - [Preprocessing Unstructured Data for LLM Applications](https://hackmd.io/@YungHuiHsu/SkJUlPCeA)
 - [RAG + Langchain Python Project: Easy AI/Chat For Your Docs](https://www.youtube.com/watch?v=tcqEUSNCn8I)
   - [Github](https://github.com/pixegami/langchain-rag-tutorial)
